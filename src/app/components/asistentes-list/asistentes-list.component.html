@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <input type="text" name='name' [(ngModel)]="name" placeholder="Nombre asistente">
+  <input type="submit" value="Ingresar">
+</form>
+
+<hr>
+<h2>Lista de asistentes</h2>
+<ul>
+  <li *ngFor="let asistente of listas$ | async; let i = index;">
+    {{asistente}} <a class='btn-remove' (click)='remove(i)'>Remover</a>
+  </li>
+</ul>
